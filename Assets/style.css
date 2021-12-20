@@ -12,7 +12,6 @@
     src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
-
   @font-face {
     font-family: 'Ubuntu';
     font-style: normal;
@@ -23,8 +22,8 @@
   }
 
 :root {
-    --dark: rgb(52, 52, 78);
-    --light: rgb(83, 199, 199);
+    --dark: rgb(55, 55, 75);
+    --light: rgb(122, 201, 201);
 }
 
 body {
@@ -135,7 +134,7 @@ h1.title {
 
 /*Main Page*/
 
-.sec, #sec1, #foot, nav.bottom {
+.sec, #sec1, #foot, nav.bottom, a.caption2 {
     margin: 5px 0 5px 15px;
 }
 
@@ -145,21 +144,31 @@ h1.title {
   }
 
         /*Work*/
-section {
+.sec {
     display: flex;
 }
 
-section a.caption {
+a.caption2{
+    grid-row: 4;
+    grid-column: 2;
+    align-self: end;
+    margin-bottom: 15px;
+    background-color: var(--light);
+}
+
+a.caption{
     background-color: var(--light);
     align-self: flex-end;
     margin-bottom: 10px;
 }
 
-.sec a:link {
+.sec a:link,
+a.caption2:link {
     text-decoration: none;
     color: var(--dark);
 }
-.sec a:visited {
+.sec a:visited,
+a.caption2:visited {
     text-decoration: none;
     color: var(--dark);
 }
@@ -193,7 +202,7 @@ section a.caption {
 #sec5 {
     background-color: slategray;
     grid-area: sec5;
-    background-image: url();
+    background-image: url(./images/fourth_app.png);
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -201,14 +210,13 @@ section a.caption {
 #sec6 {
     background-color: slategray;
     grid-area: sec6;
-    background-image: url(#);
-    background-size: 100%;
+    background-image: url(./images/wall-bluegreen.jpg);
+    /*background-size: 100%;*//*will need when insert project image*/
     background-repeat: no-repeat;
 }
 
         /*Contact Me*/
 footer {
-    background-color: paleturquoise;
     grid-area: sec7;
   }
 
