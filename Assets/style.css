@@ -27,11 +27,11 @@
 }
 
 body {
-    height: 100vh;
+    /*height: 100vh;*/
     font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
     grid-template-columns: 2fr 2fr 1.5fr 0.5fr 1fr 2fr 0.5fr;
-    grid-template-rows: 0.5fr 1.5fr 2fr 3fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.25fr 2fr 3fr 1fr 1fr 1fr;
     grid-template-areas:
    
       "header header header header header header header"
@@ -70,7 +70,7 @@ h1#head {
 
 nav.header {
     grid-row: 1 / 2;
-    grid-column: 5 / 7;
+    grid-column: 4 / 7;
     place-self: center end;               
 }
 
@@ -98,7 +98,7 @@ nav.header a:visited {
 
 h2.subtitle {
     grid-row: 2 / 3;
-    grid-column: 6 / 7;
+    grid-column: 5 / 7;
     align-self: end;
     margin-bottom: 5%;
     font-size: 1.7em;
@@ -110,7 +110,7 @@ h2.subtitle {
 aside {
     place-self: stretch;
     border-right: 2px solid var(--dark);
-    margin: 3% 0;
+    margin: 5% 0;
 }       
 
 h1.title {
@@ -144,22 +144,13 @@ h1.title {
   }
 
         /*Work*/
+
 .sec {
-    display: flex;
+    border: 5px solid var(--light);
 }
 
 a.caption2{
-    grid-row: 4;
-    grid-column: 2;
-    align-self: end;
-    margin-bottom: 15px;
     background-color: var(--light);
-}
-
-a.caption{
-    background-color: var(--light);
-    align-self: flex-end;
-    margin-bottom: 10px;
 }
 
 .sec a:link,
@@ -180,7 +171,15 @@ a.caption2:visited {
     background-size: 100%;
     background-repeat: no-repeat;
   }
- 
+
+a#cap2{
+    grid-row: 4;
+    grid-column: 2;
+    align-self: end;
+    margin-bottom: 15px;
+    background-color: var(--light);
+}
+
 #sec3 {
     background-color: slategray;
     grid-area: sec3;
@@ -188,9 +187,16 @@ a.caption2:visited {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: -50px;
-
   }
-  
+
+a#cap3{
+    grid-row: 5;
+    grid-column: 2;
+    align-self: end;
+    margin-bottom: 10px;
+    background-color: var(--light);
+}
+
 #sec4 {
     background-color: slategray;
     grid-area: sec4;
@@ -198,6 +204,14 @@ a.caption2:visited {
     background-size: 100%;
     background-repeat: no-repeat;
   }
+
+a#cap4{
+    grid-row: 5;
+    grid-column: 4 / 6;
+    align-self: end;
+    margin-bottom: 10px;
+    background-color: var(--light);
+}
 
 #sec5 {
     background-color: slategray;
@@ -207,12 +221,28 @@ a.caption2:visited {
     background-repeat: no-repeat;
   }
 
+a#cap5{
+    grid-row: 6;
+    grid-column: 2;
+    align-self: end;
+    margin-bottom: 10px;
+    background-color: var(--light);
+}
+
 #sec6 {
     background-color: slategray;
     grid-area: sec6;
     background-image: url(./images/wall-bluegreen.jpg);
     /*background-size: 100%;*//*will need when insert project image*/
     background-repeat: no-repeat;
+}
+
+a#cap6 {
+    grid-row: 6;
+    grid-column: 4 / 6;
+    align-self: end;
+    margin-bottom: 10px;
+    background-color: var(--light);
 }
 
         /*Contact Me*/
