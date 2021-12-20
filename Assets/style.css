@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCxCvjsGyNPYZvgw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+:root {
+    --dark: rgb(52, 52, 78);
+    --light: rgb(83, 199, 199);
+}
+
+body {
+    height: 100vh;
+    font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr 0.5fr 1fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 1.5fr 2fr 3fr 1fr 1fr 1fr;
+    grid-template-areas:
+   
+      "header header header header header header header"
+      "bi bi bi bi bi bi bi"
+      "as1 sec1 sec1 sec1 sec1 sec1 none"
+      "as2 sec2 sec2 sec2 sec2 sec2 none"
+      "as2 sec3 sec3 sec4 sec4 sec4 none"
+      "as2 sec5 sec5 sec6 sec6 sec6 none"
+      "as3 sec7 sec7 sec7 sec7 sec7 none"
+      ;
+  }
+  
+h1 {
+    color: var(--dark);
+    font-size: 2.5em;
+}
+
+.bi {
+    overflow: hidden;
+    background-color: lightseagreen;
+}
+
+/*Header w/ nav*/
+header {
+    background-color: var(--dark);
+    grid-area: header;
+  }
+
+h1#head {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background-color: var(--light);
+    margin-bottom: 5%;
+    padding: 0;
+}
+
+nav.header {
+    grid-row: 1 / 2;
+    grid-column: 5 / 7;
+    place-self: center end;               
+}
+
+nav.header a {
+    border-bottom:3px solid rgb(83, 199, 199);
+    padding: 2px 3px;
+    margin: 5px;
+}
+
+nav.header a:link {
+    text-decoration: none;
+    color: var(--light);
+}
+
+nav.header a:visited {
+    text-decoration: none;
+    color: var(--light);
+}
+
+/*Background image w/ subtitile*/
+#bi1 {
+    background-image: url(./images/wall-bluegreen.jpg);
+    grid-area: bi;
+  }
+
+h2.subtitle {
+    grid-row: 2 / 3;
+    grid-column: 6 / 7;
+    align-self: end;
+    margin-bottom: 5%;
+    font-size: 1.7em;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/*Left Sidebar*/
+aside {
+    place-self: stretch;
+    border-right: 2px solid var(--dark);
+    margin: 3% 0;
+}       
+
+h1.title {
+    place-self: start stretch;
+    text-align: right;
+    padding-right: 5px;
+}
+
+#as1 {
+    grid-area: as1;
+  }
+
+
+#as2 {
+    grid-area: as2;
+  }
+  
+#as3 {
+    grid-area: as3
+  }
+
+/*Main Page*/
+
+.sec, #sec1, #foot, nav.bottom {
+    margin: 5px 0 5px 15px;
+}
+
+        /*About-Me*/  
+#sec1 {
+    grid-area: sec1;
+  }
+
+        /*Work*/
+section {
+    display: flex;
+}
+
+section a.caption {
+    background-color: var(--light);
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.sec a:link {
+    text-decoration: none;
+    color: var(--dark);
+}
+.sec a:visited {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+#sec2 {
+    background-color: lightgray;
+    grid-area: sec2;
+    background-image: url(./images/first_app.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+ 
+#sec3 {
+    background-color: slategray;
+    grid-area: sec3;
+    background-image: url(./images/second_app2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: -50px;
+
+  }
+  
+#sec4 {
+    background-color: slategray;
+    grid-area: sec4;
+    background-image: url(./images/third_app.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+#sec5 {
+    background-color: slategray;
+    grid-area: sec5;
+    background-image: url();
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+#sec6 {
+    background-color: slategray;
+    grid-area: sec6;
+    background-image: url(#);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+        /*Contact Me*/
+footer {
+    background-color: paleturquoise;
+    grid-area: sec7;
+  }
+
+nav.bottom {
+    grid-row: 7;
+    grid-column: 2 / 7;
+    place-self: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav.bottom a {
+    border-bottom:3px solid var(--dark);
+    padding: 2px 3px;
+    margin: 5px;
+}
+
+nav.bottom a:link {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+nav.bottom a:visited {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+
+/*
+h1 {
+    font-size: 2.5em;
+}
+
+/**Header**/
+/* header {
+    display: flex;
+    background-color: var(--dark);
+    justify-content: space-between;
+}
+header h1 {
+    align-self:flex-start;
+    margin: 0 0 0.5em 0;
+    padding: 5px 5px 5px 3rem;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+nav.header {
+    display: flex;
+    margin: 0 5%;
+    list-style: none;
+    color: var(--light);
+}
+
+nav.header a {
+    margin: 10px;
+    padding: 2px 5px; 
+    align-self: center;
+    border-bottom: 2px solid var(--light);
+}
+
+nav.header a:link {
+    color: var(--light);
+    text-decoration: none;
+}
+
+nav.header a:visited {
+    color: var(--light);
+    text-decoration: none;
+}
+
+/**Background image banner**/
+
+/* div.background-image {
+    background-image: url(./images/wall-bluegreen.jpg);
+    display: flex;
+    background-color: gray;
+    justify-content: flex-end;
+    align-content: flex-end;
+    overflow: hidden;
+}
+
+
+
+h2.subtitle {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    margin: 1% 5%;
+    justify-self: flex-end;
+    align-self: flex-end;
+    color: var(--light);
+    background-color: var(--dark);
+}
+
+/**Main**/
+/* 
+main {
+    display: grid; */
+    /**grid-template: 
+    [a1-start] "a1 a2 a3 a4" 1fr [a4-end]
+    [b1-start] "b1 b2 b3 b4" 2fr [b4-end]
+    [c1-start] "c1 c2 c3 c4" 1fr [c4-end]
+    [c1-start] "d1 d2 d3 d4" 1fr [d4-end]
+    [c1-start] "e1 e2 e3 e4" 1fr [e4-end]
+    [c1-start] "f1 f2 f3 f4" 0.5fr [f4-end]
+    / 2fr 4fr 4fr 1fr;**/
+/* 
+    grid-template-columns: 2fr 4fr 4fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+        "a1 a2 a3 a4"
+        "b1 b2 b3 b4"
+        "c1 c2 c3 c4"
+        "d1 d2 d3 d4"
+        "e1 e2 e3 e4"
+        "f1 f2 f3 f4";
+} */
+/* 
+h1.title  {
+    color: var(--dark);
+} */
+
+/**About Me**/
+
+/* article.about-me h1#am  {
+    grid-area: a1;
+}
+
+article.about-me p {
+    grid-area: a2;
+} */
+
+/**Work**/
+
+/* div#sec2  {
+    grid-area: b1;
+}
+
+div.images img {
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+    overflow: hidden;
+}
+
+div.images img.first-app {
+    width: 400px;
+    grid-column: 2 / span 2;
+    grid-row: 2;
+}
+
+div.images img.later-app {
+    width: 195px;
+}
+
+div.caption {
+    background-color: var(--light);
+    color: var(--dark);
+    z-index: 2;
+}
+
+div.images a {
+    text-decoration: none;
+}
+
+div.images a#work-2 {
+    grid-area: c2;
+}
+div.images a#work-3 {
+    grid-area: c3;
+}
+div.images a#work-4 {
+    grid-area: d2;
+}
+div.images a#work-5 {
+    grid-area: d3;
+} */
+
+/**Contact Me**/
+
+/* h1#cm  {
+    grid-area: e1;
+}
+
+nav.footer a {
+    margin: 10px;
+    padding: 2px 5px; 
+    align-self: center;
+    border-bottom: 2px solid var(--dark);
+}
+
+nav.footer a:link {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+nav.footer a:visited {
+    color: var(--dark);
+    text-decoration: none;
+} */
