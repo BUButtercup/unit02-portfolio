@@ -70,7 +70,7 @@ h1#head {
 
 nav.header {
     grid-row: 1 / 2;
-    grid-column: 4 / 7;
+    grid-column: 2 / 7;
     place-self: center end;              
 }
 
@@ -272,33 +272,37 @@ nav.bottom a:visited {
     color: var(--dark);
 }
 
+
+        /*Mobile display*/
 @media screen and (max-width: 480px) {
     body {
-
+        width: 100%;
+        text-size-adjust: auto auto ;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: auto;
         grid-template-areas:
-        "h1"
-        "nav1"
-        "as1"
-        "sec1"
-        "as2" 
-        "sec2"
-        "sec3"
-        "sec4"
-        "sec5"
-        "sec6"
-        "as3" 
-        "nav2"
+        "h1 h1 h1"
+        "nav1 nav1 nav1"
+        "as1 as1 as1"
+        "sec1 sec1 sec1"
+        "as2 as2 as2" 
+        "none sec2 none"
+        "none sec3 none"
+        "none sec4 none"
+        "none sec5 none"
+        "none sec6 none"
+        "as3 as3 as3" 
+        "nav2 nav2 nav2"
       ;
   }
 
     header {
         display: none;
+        align-items: stretch;
     }
 
-    #bi {
+    #bi1 {
         display: none;
     }
 
@@ -306,191 +310,119 @@ nav.bottom a:visited {
         display: none;
     }
 
-    h1 {
+
+        /*Header*/
+    h1#head {
         grid-area: h1;
-        place-self: center;
+        place-self: stretch;
+        text-align: center;
+        margin: 0;
+        background-image: url(./images/wall-bluegreen.jpg);
+        color: var(--light);
     }
 
     nav.header {
         grid-area: nav1;
-        place-self: center;              
+        height: 100%;
+        padding: 2%;
+        place-self: center stretch;
+        background-color: var(--dark);              
     }
 
+    nav.header a {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        place-self: center;
+        border-bottom:3px solid rgb(83, 199, 199);
+        padding: 2px 3px;
+        margin: 5px;
+        font-size: 0.5em;
+    }
+
+        /*section titles*/
+    aside {
+        place-self: stretch;
+        border-bottom: 2px solid var(--dark);
+        border-right: 0;
+        margin: 0;
+    }       
+    
+    h1.title {
+        place-self: end center;
+        text-align: center;
+        padding-right: 0;
+        padding-top: 10px;
+        font-size: 2em;
+    }
+    
+        /*About me*/
+    #sec1 {
+        margin: 10px 20px -10px 20px;
+    }
+
+        /*Work*/
+    a.sec {
+        place-self: center start;
+        width: 100px;
+        margin: 10px 0;
+    }
+    
+    a.caption2 {
+        place-self: end start;
+        margin: 0;
+        font-size: 0.5em;
+    }
+
+    /* a.caption2 div {
+        font-size: 0.5em;
+        place-self: end start;
+        margin: 0;
+    } */
+
+    a#cap2{
+        grid-row: 6;
+        grid-column: 2;
+        background-color: var(--light);
+    }
+
+    a#cap3{
+        grid-row: 7;
+        grid-column: 2;
+        background-color: var(--light);
+    }
+
+    a#cap4{
+        grid-row: 8;
+        grid-column: 1;
+        align-self: end;
+        background-color: var(--light);
+    }
+
+    a#cap5{
+        grid-row: 9;
+        grid-column: 1;
+        align-self: end;
+        background-color: var(--light);
+    }
+
+    a#cap6 {
+        grid-row: 10;
+        grid-column: 1;
+        align-self: end;
+        background-color: var(--light);
+    }
+
+        /*Contact me*/
     nav.bottom {
         grid-area: nav2;
         place-self: center;
     }
+
+    nav.bottom a {
+        border-bottom:3px solid var(--dark);
+        padding: 2px 3px;
+        margin: 5px;
+        text-align: center;
+        font-size: 0.5em;
+    }
 }
-/*
-h1 {
-    font-size: 2.5em;
-}
-
-/**Header**/
-/* header {
-    display: flex;
-    background-color: var(--dark);
-    justify-content: space-between;
-}
-header h1 {
-    align-self:flex-start;
-    margin: 0 0 0.5em 0;
-    padding: 5px 5px 5px 3rem;
-    color: var(--dark);
-    background-color: var(--light);
-}
-
-nav.header {
-    display: flex;
-    margin: 0 5%;
-    list-style: none;
-    color: var(--light);
-}
-
-nav.header a {
-    margin: 10px;
-    padding: 2px 5px; 
-    align-self: center;
-    border-bottom: 2px solid var(--light);
-}
-
-nav.header a:link {
-    color: var(--light);
-    text-decoration: none;
-}
-
-nav.header a:visited {
-    color: var(--light);
-    text-decoration: none;
-}
-
-/**Background image banner**/
-
-/* div.background-image {
-    background-image: url(./images/wall-bluegreen.jpg);
-    display: flex;
-    background-color: gray;
-    justify-content: flex-end;
-    align-content: flex-end;
-    overflow: hidden;
-}
-
-
-
-h2.subtitle {
-    width: fit-content;
-    height: fit-content;
-    padding: 5px;
-    margin: 1% 5%;
-    justify-self: flex-end;
-    align-self: flex-end;
-    color: var(--light);
-    background-color: var(--dark);
-}
-
-/**Main**/
-/* 
-main {
-    display: grid; */
-    /**grid-template: 
-    [a1-start] "a1 a2 a3 a4" 1fr [a4-end]
-    [b1-start] "b1 b2 b3 b4" 2fr [b4-end]
-    [c1-start] "c1 c2 c3 c4" 1fr [c4-end]
-    [c1-start] "d1 d2 d3 d4" 1fr [d4-end]
-    [c1-start] "e1 e2 e3 e4" 1fr [e4-end]
-    [c1-start] "f1 f2 f3 f4" 0.5fr [f4-end]
-    / 2fr 4fr 4fr 1fr;**/
-/* 
-    grid-template-columns: 2fr 4fr 4fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr 1fr 1fr 0.5fr;
-    grid-template-areas:
-        "a1 a2 a3 a4"
-        "b1 b2 b3 b4"
-        "c1 c2 c3 c4"
-        "d1 d2 d3 d4"
-        "e1 e2 e3 e4"
-        "f1 f2 f3 f4";
-} */
-/* 
-h1.title  {
-    color: var(--dark);
-} */
-
-/**About Me**/
-
-/* article.about-me h1#am  {
-    grid-area: a1;
-}
-
-article.about-me p {
-    grid-area: a2;
-} */
-
-/**Work**/
-
-/* div#sec2  {
-    grid-area: b1;
-}
-
-div.images img {
-    max-width: 100%;
-    height: auto;
-    z-index: 1;
-    overflow: hidden;
-}
-
-div.images img.first-app {
-    width: 400px;
-    grid-column: 2 / span 2;
-    grid-row: 2;
-}
-
-div.images img.later-app {
-    width: 195px;
-}
-
-div.caption {
-    background-color: var(--light);
-    color: var(--dark);
-    z-index: 2;
-}
-
-div.images a {
-    text-decoration: none;
-}
-
-div.images a#work-2 {
-    grid-area: c2;
-}
-div.images a#work-3 {
-    grid-area: c3;
-}
-div.images a#work-4 {
-    grid-area: d2;
-}
-div.images a#work-5 {
-    grid-area: d3;
-} */
-
-/**Contact Me**/
-
-/* h1#cm  {
-    grid-area: e1;
-}
-
-nav.footer a {
-    margin: 10px;
-    padding: 2px 5px; 
-    align-self: center;
-    border-bottom: 2px solid var(--dark);
-}
-
-nav.footer a:link {
-    color: var(--dark);
-    text-decoration: none;
-}
-
-nav.footer a:visited {
-    color: var(--dark);
-    text-decoration: none;
-} */
